@@ -3,17 +3,233 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Para você 💜</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-family: Georgia, "Times New Roman", serif;
+      color: #f7f3ff;
+
+      background:
+        radial-gradient(circle at 50% 20%, rgba(92, 76, 150, 0.28), transparent 30%),
+        linear-gradient(180deg, #050914 0%, #080d1f 55%, #11112b 100%);
+    }
+
+    .scene {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 30px;
+    }
+
+    /* ESTRELAS */
+
+    .scene::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background-image:
+        radial-gradient(circle at 8% 15%, #ffffff 1px, transparent 1.5px),
+        radial-gradient(circle at 18% 72%, #d9d0ff 1px, transparent 1.5px),
+        radial-gradient(circle at 27% 31%, #ffffff 1.2px, transparent 1.7px),
+        radial-gradient(circle at 39% 12%, #d9d0ff 1px, transparent 1.5px),
+        radial-gradient(circle at 48% 82%, #ffffff 1px, transparent 1.5px),
+        radial-gradient(circle at 58% 27%, #d9d0ff 1px, transparent 1.5px),
+        radial-gradient(circle at 67% 67%, #ffffff 1.2px, transparent 1.7px),
+        radial-gradient(circle at 78% 18%, #d9d0ff 1px, transparent 1.5px),
+        radial-gradient(circle at 88% 55%, #ffffff 1px, transparent 1.5px),
+        radial-gradient(circle at 94% 25%, #d9d0ff 1px, transparent 1.5px);
+
+      opacity: 0.75;
+    }
+
+    /* CONTEÚDO */
+
+    .content {
+      position: relative;
+      z-index: 2;
+
+      width: 100%;
+      max-width: 520px;
+
+      text-align: center;
+    }
+
+    /* LUA */
+
+    .moon {
+      width: 82px;
+      height: 82px;
+
+      margin: 0 auto 28px;
+
+      border-radius: 50%;
+
+      background: #eeeaff;
+
+      box-shadow:
+        0 0 18px rgba(238, 234, 255, 0.35),
+        0 0 45px rgba(181, 163, 255, 0.18);
+
+      position: relative;
+    }
+
+    .moon::after {
+      content: "";
+
+      position: absolute;
+
+      width: 82px;
+      height: 82px;
+
+      border-radius: 50%;
+
+      background: #080d1f;
+
+      left: 22px;
+      top: -8px;
+    }
+
+    .eyebrow {
+      margin-bottom: 13px;
+
+      color: #b9a9e9;
+
+      font-size: 0.72rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin-bottom: 14px;
+
+      font-size: clamp(2.5rem, 11vw, 4.3rem);
+      font-weight: 400;
+      letter-spacing: 0.04em;
+
+      text-shadow:
+        0 0 18px rgba(190, 174, 255, 0.25);
+    }
+
+    .subtitle {
+      max-width: 390px;
+
+      margin: 0 auto 32px;
+
+      color: #ded8ef;
+
+      font-size: 1.08rem;
+      line-height: 1.7;
+    }
+
+    /* BOTÕES */
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+
+      flex-wrap: wrap;
+    }
+
+    button {
+      min-width: 125px;
+
+      padding: 13px 25px;
+
+      border: 1px solid rgba(201, 188, 255, 0.45);
+      border-radius: 999px;
+
+      background: rgba(22, 20, 50, 0.75);
+
+      color: #f7f3ff;
+
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 0 18px rgba(157, 135, 226, 0.12);
+
+      transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+
+      background: rgba(48, 41, 87, 0.9);
+
+      box-shadow:
+        0 0 25px rgba(157, 135, 226, 0.25);
+    }
+
+    .tiny {
+      margin-top: 28px;
+
+      color: rgba(222, 216, 239, 0.55);
+
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+  </style>
 </head>
 
 <body>
 
-  <h1>Oi, meu amor! 💜</h1>
+  <div class="scene">
 
-  <p>Você está pronto para receber uma surpresa?</p>
+    <div class="content">
 
-  <button>SIM 💜</button>
-  <button>NÃO 😳</button>
+      <div class="moon"></div>
+
+      <div class="eyebrow">
+        Minha nossa! Você me encontrou aqui, vejo que busca respostas.
+      </div>
+
+      <h1>
+        Sou o Suriel, um ser antigo. 
+      </h1>
+
+      <p class="subtitle">
+        Você veio me procurar para descobrir o que ela preparou para você?
+      </p>
+
+      <div class="buttons">
+        <button>SIM ✦</button>
+        <button>NÃO</button>
+      </div>
+
+      <div class="tiny">
+        ✦ Você só poderá abrir este presente se for o parceiro dela. ✦
+      </div>
+
+    </div>
+
+  </div>
 
 </body>
 </html>
