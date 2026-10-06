@@ -228,6 +228,29 @@ color: rgba(222, 216, 239, 0.75);
     </div>
 
   </div>
+  <script>
+    const sim = document.querySelector(".buttons button:first-child");
+    const nao = document.querySelector(".buttons button:last-child");
 
+    sim.addEventListener("click", function() {
+      alert("Então você veio mesmo procurar respostas...");
+
+      document.querySelector(".eyebrow").textContent =
+        "Vejo que não fugiu do seu destino.";
+
+      document.querySelector("h1").textContent =
+        "Muito bem, parceiro dela.";
+
+      document.querySelector(".subtitle").textContent =
+        "Mas ainda precisará provar que é digno de abrir este presente.";
+
+      sim.textContent = "CONTINUAR ✦";
+      nao.style.display = "none";
+    });
+
+    nao.addEventListener("click", function() {
+      alert("Tem certeza disso? O Suriel não costuma fazer a mesma pergunta duas vezes.");
+    });
+  </script>
 </body>
 </html>
