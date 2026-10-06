@@ -232,23 +232,82 @@ color: rgba(222, 216, 239, 0.75);
   const sim = document.querySelector(".buttons button:first-child");
   const nao = document.querySelector(".buttons button:last-child");
 
-  sim.addEventListener("click", function() {
+sim.addEventListener("click", function() {
+
+  document.querySelector(".eyebrow").textContent =
+    "Vejo que não fugiu do seu destino.";
+
+  document.querySelector("h1").textContent =
+    "Muito bem, parceiro dela.";
+
+  document.querySelector(".subtitle").textContent =
+    "Mas ainda precisará provar que é digno de abrir este presente.";
+
+  sim.textContent = "CONTINUAR ✦";
+  nao.style.display = "none";
+
+  document.querySelector(".tiny").textContent =
+    "✦ O Suriel observa em silêncio. ✦";
+
+
+  sim.onclick = function() {
 
     document.querySelector(".eyebrow").textContent =
-      "Vejo que não fugiu do seu destino.";
+      "Feche os olhos. Sinta seu coração batendo e procure nele o laço da parceria. Quando o encontrar, sinta ele.";
 
     document.querySelector("h1").textContent =
-      "Muito bem, parceiro dela.";
+      "A primeira prova começa agora. Leve o laço com você, humano. Se o tiver.";
 
     document.querySelector(".subtitle").textContent =
-      "Mas ainda precisará provar que é digno de abrir este presente.";
+      "Existem 2 impactantes momentos em que o destino parece ter escolhido para aproximar vocês. Em qual deles ela sentiu o laço?";
 
-    sim.textContent = "CONTINUAR ✦";
-    nao.style.display = "none";
+    sim.textContent = "O ENCONTRO NO CENTRO CULTURAL ✦";
+    nao.textContent = "A NOITE NO SKY BAR ✦";
+
+    nao.style.display = "inline-block";
 
     document.querySelector(".tiny").textContent =
-      "✦ O Suriel observa em silêncio. ✦";
-  });
+      "✦ Pense bem, parceiro dela. O Suriel não costuma repetir perguntas. ✦";
+
+
+    sim.onclick = function() {
+
+      document.querySelector(".eyebrow").textContent =
+        "Interessante...";
+
+      document.querySelector("h1").textContent =
+        "Você se lembra.";
+
+      document.querySelector(".subtitle").textContent =
+        "Foi no carro, após o CCBB, em que ela percebeu que havia algo diferente entre vocês. Antes de vocês se sentirem um casal.";
+
+      sim.textContent = "CONTINUAR ✦";
+      nao.style.display = "none";
+
+      document.querySelector(".tiny").textContent =
+        "✦ Não disse que não teria pegadinhas, humano...Talvez você seja mesmo o parceiro dela. ✦";
+    };
+
+
+    nao.onclick = function() {
+
+      document.querySelector(".eyebrow").textContent =
+        "O Suriel inclina a cabeça.";
+
+      document.querySelector("h1").textContent =
+        "Não exatamente.";
+
+      document.querySelector(".subtitle").textContent =
+        "A noite no Sky Bar foi o momento em que vocês se sentiram como um casal. Mas não foi quando ela sentiu o laço da parceria";
+
+      nao.textContent = "TENTAR NOVAMENTE ✦";
+      sim.textContent = "O ENCONTRO NO CCBB ✦";
+
+      document.querySelector(".tiny").textContent =
+        "✦ Algumas histórias, humano... começam antes de percebermos que começaram. ✦";
+    };
+  };
+});
 
 
   nao.addEventListener("click", function() {
