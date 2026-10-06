@@ -308,21 +308,38 @@
 
       /* ENTRADA DA PRIMEIRA PROVA */
 
-      if (etapa === "entrada") {
+    if (etapa === "entrada") {
 
-        mostrar(
-          "Feche os olhos e sinta o seu coração. Procure nele o laço da parceria.",
-          "A primeira prova começa agora. Leve o laço com você, humano. Se o tiver.",
-          "Existem dois momentos marcantes em que o destino parece ter escolhido aproximar vocês. Em qual deles ela sentiu o laço?",
-          "O ENCONTRO NO CENTRO CULTURAL ✦",
-          "A NOITE NO SKY BAR ✦",
-          "✦ Pense bem, parceiro dela. O Suriel não costuma repetir perguntas. ✦"
-        );
+  mostrar(
+    "Feche os olhos e sinta o seu coração.",
+    "Procure o laço da parceria.",
+    "Leve-o com você, humano. Se realmente o tiver.",
+    "CONTINUAR ✦",
+    null,
+    "✦ O Suriel observa em silêncio. ✦"
+  );
 
-        etapa = "provaCCBB";
+  etapa = "lacoParceria";
 
-        return;
-      }
+  return;
+}
+
+
+if (etapa === "lacoParceria") {
+
+  mostrar(
+    "A primeira prova começa agora.",
+    "O laço da parceria.",
+    "Existem dois momentos marcantes em que o destino parece ter escolhido aproximar vocês. Em qual deles ela sentiu o laço?",
+    "O ENCONTRO NO CENTRO CULTURAL ✦",
+    "A NOITE NO SKY BAR ✦",
+    "✦ Pense bem, parceiro dela. O Suriel não costuma repetir perguntas. ✦"
+  );
+
+  etapa = "provaCCBB";
+
+  return;
+}
 
 
       /* RESPOSTA CORRETA: CCBB */
