@@ -312,7 +312,38 @@
 
 
       /* ENTRADA DA PRIMEIRA PROVA */
+      if (etapa === "inicioNao") {
 
+        mostrar(
+          "Vejo que finalmente decidiu.",
+          "Muito bem, parceiro dela.",
+          "Agora podemos continuar.",
+          "CONTINUAR ✦",
+          null,
+          "✦ O Suriel observa em silêncio. ✦"
+        );
+
+        etapa = "entrada";
+
+        return;
+      }
+
+
+      if (etapa === "inicioNao2") {
+
+        mostrar(
+          "Vejo que finalmente decidiu.",
+          "Muito bem, parceiro dela.",
+          "Agora podemos continuar.",
+          "CONTINUAR ✦",
+          null,
+          "✦ O Suriel observa em silêncio. ✦"
+        );
+
+        etapa = "entrada";
+
+        return;
+      }
     if (etapa === "entrada") {
 
   mostrar(
