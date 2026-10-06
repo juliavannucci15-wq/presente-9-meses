@@ -414,22 +414,82 @@ if (etapa === "provaLicoes") {
 
   return;
 }
+if (etapa === "depoisLicoes") {
 
-      /* PRÓXIMA ETAPA — VAMOS CONSTRUIR DEPOIS */
+  mostrar(
+    "O Suriel permanece em silêncio por alguns instantes.",
+    "Talvez o laço seja mais forte do que parece.",
+    "Vocês são diferentes. Sempre foram. Mas, mesmo depois das batalhas, continuaram encontrando um no outro aquilo que precisavam para seguir em frente.",
+    "CONTINUAR ✦",
+    null,
+    "✦ Nem todo laço é feito para tornar duas pessoas iguais. Alguns existem para fazê-las crescer. ✦"
+  );
 
-      if (etapa === "depoisLingua") {
+  etapa = "proximaParte";
+
+  return;
+}
+            if (etapa === "proximaParte") {
 
         mostrar(
-          "O Suriel o observa em silêncio.",
-          "Ainda há mais.",
-          "O laço continua levando você para dentro da história dela.",
+          "Mas o Suriel se lembra de algo anterior a tudo isso.",
+          "Antes do laço, houve apenas vocês.",
+          "Antes das batalhas, antes das mudanças e até antes de saberem o que seriam um para o outro, houve um dia em que vocês simplesmente riram. Entre tantas pessoas, por alguns instantes, parecia que só existiam vocês dois.",
           "CONTINUAR ✦",
           null,
-          "✦ A noite ainda guarda segredos. ✦"
+          "✦ Algumas das histórias mais importantes começam antes de sabermos que estamos vivendo o começo de alguma coisa. ✦"
         );
+
+        etapa = "memoriaClube";
 
         return;
       }
+      if (etapa === "memoriaClube") {
+
+        mostrar(
+          "O Suriel observa uma lembrança distante.",
+          "O Clube da Stella.",
+          "Havia muita gente. Seu irmão, os irmãos dela, os amigos deles por todos os lados. Mas, enquanto jogavam badminton e riam um do outro, vocês encontraram um pequeno mundo só de vocês.",
+          "CONTINUAR ✦",
+          null,
+          "✦ Naquele dia, vocês ainda não sabiam o que estavam começando. ✦"
+        );
+
+        etapa = "memoriaMusica";
+
+        return;
+      }
+            if (etapa === "memoriaMusica") {
+
+        mostrar(
+          "O Suriel sorri ao se lembrar.",
+          "E aquela música?",
+          "Quando “More Than a Feeling” se tornou parte da memória de vocês, o que vocês estavam fazendo?",
+          "CONVERSANDO SOZINHOS EM ALGUM CANTO, LONGE DE TODOS. ✦",
+          "JOGANDO BADMINTON, RINDO UM DO OUTRO E DE TUDO AO REDOR. ✦",
+          "✦ Algumas lembranças são realmente fora de série. ✦"
+        );
+
+        etapa = "provaMusica";
+
+        return;
+      }
+            if (etapa === "depoisMusica") {
+
+        mostrar(
+          "O Suriel permanece em silêncio por um instante.",
+          "Talvez tenha sido ali.",
+          "Antes de vocês saberem o que seriam um para o outro, antes das batalhas e antes de precisarem aprender a mudar, existiu aquele pequeno instante em que tudo parecia simples.",
+          "CONTINUAR ✦",
+          null,
+          "✦ Às vezes, o começo de uma história não parece importante enquanto está acontecendo. ✦"
+        );
+
+        etapa = "proximaParte2";
+
+        return;
+      }
+  
 
     });
 
@@ -514,19 +574,35 @@ if (etapa === "provaLicoes") {
 
   return;
 }
+if (etapa === "depoisLicoes") {
 
+  mostrar(
+    "O Suriel permanece em silêncio por alguns instantes.",
+    "Talvez o laço seja mais forte do que parece.",
+    "Vocês são diferentes. Sempre foram. Mas, mesmo depois das batalhas, continuaram encontrando um no outro aquilo que precisavam para seguir em frente.",
+    "CONTINUAR ✦",
+    null,
+    "✦ Nem todo laço é feito para tornar duas pessoas iguais. Alguns existem para fazê-las crescer. ✦"
+  );
+
+  etapa = "proximaParte";
+
+  return;
+}
       /* RESPOSTA ERRADA DA LÍNGUA */
 
-      if (etapa === "lingua") {
+            if (etapa === "provaMusica") {
 
         mostrar(
-          "O Suriel ergue uma sobrancelha.",
-          "Língua antiga?",
-          "Não, humano. Estou falando de algo que nasceu entre vocês dois. Algo que nenhum livro antigo poderia ensinar.",
-          "LÍNGUA DO I ✦",
-          "LÍNGUA ANTIGA ✦",
-          "✦ Algumas respostas pertencem aos livros. Essa pertence a vocês. ✦"
+          "O Suriel sorri.",
+          "Sim. Era isso.",
+          "Não havia promessas. Não havia certezas. Não havia ainda o laço que você precisou provar, nem as batalhas que precisaram enfrentar. Havia apenas dois desconhecidos rindo como se fossem amigos há décadas.",
+          "CONTINUAR ✦",
+          null,
+          "✦ Talvez aquele tenha sido o verdadeiro começo. ✦"
         );
+
+        etapa = "depoisMusica";
 
         return;
       }
