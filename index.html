@@ -539,8 +539,212 @@ if (etapa === "depoisLicoes") {
 
         return;
       }
-  
+        if (etapa === "proximaParte2") {
 
+        mostrar(
+          "O Suriel finalmente deixa escapar um pequeno sorriso.",
+          "Não preciso mais testá-lo.",
+          "Você procurou respostas nas lembranças dela, nas batalhas e nos momentos que viveram juntos. Mas talvez a resposta nunca tenha estado em uma única lembrança.",
+          "CONTINUAR ✦",
+          null,
+          "✦ Algumas respostas não precisam ser encontradas. Apenas reconhecidas. ✦"
+        );
+
+         if (etapa === "reflexaoFinal") {
+
+        mostrar(
+          "O Suriel observa vocês por um último instante.",
+          "Talvez seja isso que torna o laço tão forte.",
+          "Vocês vieram de lugares diferentes. Aprenderam coisas diferentes. Erraram de maneiras diferentes. E, talvez justamente por isso, encontraram um no outro aquilo que ainda precisavam aprender.",
+          "CONTINUAR ✦",
+          null,
+          "✦ Vocês não precisaram se tornar iguais. Precisaram apenas escolher crescer. ✦"
+        );
+
+        etapa = "despedidaSuriel";
+
+        return;
+      }
+      if (etapa === "despedidaSuriel") {
+
+        mostrar(
+          "O Suriel permanece em silêncio por alguns instantes.",
+          "O resto não pertence a mim.",
+          "Eu já lhe mostrei as lembranças que precisava mostrar. Já lhe fiz as perguntas que precisava fazer. Agora, parceiro dela, há uma última coisa que somente ela pode lhe dizer.",
+          "ABRIR ✦",
+          null,
+          "✦ Algumas palavras só podem ser ditas por quem também reconheceu o laço. ✦"
+        );
+
+        etapa = "carta";
+
+        return;
+      }
+                if (etapa === "carta") {
+
+        mostrar(
+          "Agora, as palavras são dela.",
+          "Meu amor,",
+          "Nove meses atrás, eu jamais imaginaria que conheceria alguém como você.\n\nNa verdade, jamais imaginaria que conheceria alguém! Eu era super anti-homens! Já te contei da Tia Amanda tentando quebrar meu escudo, certo? HAHAHA.\n\nPorém, nenhum discurso, nem mesmo vindo das pessoas que eu mais gostava, era capaz de derrubar o muro que eu tinha erguido.\n\nAté você chegar.",
+          "CONTINUAR ✦",
+          null,
+          "✦ Algumas histórias começam antes mesmo de percebermos que estamos vivendo o começo. ✦"
+        );
+
+        etapa = "carta2";
+
+        return;
+      }
+                if (etapa === "carta2") {
+
+        mostrar(
+          "Ela ainda se lembra dos seus primeiros muros.",
+          "Eu tentei fugir.",
+          "Não foi por escolha. Eu nunca tive chances reais de fugir.\n\nApesar disso, eu tentei. Muito.\n\nMeus muros já estavam erguidos quando você me conheceu. Eu te apresentei a eles como quem mostra um escritório para um possível comprador.\n\nMas eu nunca te dei a chave.",
+          "CONTINUAR ✦",
+          null,
+          "✦ Algumas pessoas chegam até a porta. Outras encontram o caminho para dentro. ✦"
+        );
+
+        etapa = "carta3";
+
+        return;
+      }
+                if (etapa === "carta3") {
+
+        mostrar(
+          "Mas você decidiu ficar.",
+          "E eu nunca te dei a chave.",
+          "Pelo contrário: eu praticamente fiz todas as fadas corretoras de imóveis morrerem, porque, em vez de incentivar o cliente a ficar com o escritório, eu listei todos os motivos pelos quais ele deveria procurar outro.\n\nVocê riu e disse que nunca tinha conhecido alguém como eu e que apreciava a minha sinceridade.\n\nFiquei feliz. Sinceridade é um nome muito melhor para autossabotagem! Hahahaha.",
+          "CONTINUAR ✦",
+          null,
+          "✦ E, mesmo assim, você ficou. ✦"
+        );
+
+        etapa = "carta4";
+
+        return;
+      }
+                if (etapa === "carta4") {
+
+        mostrar(
+          "Ela abaixou os escudos sem perceber.",
+          "Foi no CCBB.",
+          "Amor, até o dia do encontro no CCBB, eu confesso que ainda estava armada.\n\nMeu arco e flecha estava comigo. Invisível, mas estava.\n\nFoi só depois daquele encontro, no carro, que eu realmente abaixei os escudos.\n\nSem perceber. Sem querer.",
+          "CONTINUAR ✦",
+          null,
+          "✦ E foi ali que ela encontrou o laço, antes mesmo de saber o seu nome. ✦"
+        );
+
+        etapa = "carta5";
+
+        return;
+      }
+                if (etapa === "carta5") {
+
+        mostrar(
+          "Ela sentiu o laço antes de saber o que ele era.",
+          "Eu senti o laço da parceria.",
+          "Mesmo sem saber o que ele significava.\n\nEle estava lá.\n\nVocê estava lá.\n\nNove meses atrás, eu jamais imaginaria que conheceria alguém como você.\n\nMas aqui estamos nós.",
+          "CONTINUAR ✦",
+          null,
+          "✦ Algumas coisas são reconhecidas pelo coração antes de serem compreendidas. ✦"
+        );
+
+        etapa = "carta6";
+
+        return;
+      }
+                if (etapa === "carta6") {
+
+        mostrar(
+          "Mas o começo não foi tranquilo.",
+          "Antes que pudéssemos nos apaixonar mais, a guerra veio.",
+          "E com ela vieram as dúvidas, os medos, as sabotagens, a desconfiança, a tristeza, a decepção e a mágoa.\n\nNão sabíamos lutar. Não tínhamos a experiência necessária.\n\nVocê não sabia como encarar os guerreiros inimigos que vinham contra você, e eu não sabia como encarar os meus.",
+          "CONTINUAR ✦",
+          null,
+          "✦ Eram lutas diferentes. Mas todas atingiam o mesmo laço. ✦"
+        );
+
+        etapa = "carta7";
+
+        return;
+      }
+                if (etapa === "carta7") {
+
+        mostrar(
+          "Então, cansados, vocês olharam um para o outro.",
+          "E perceberam que não eram mais os mesmos.",
+          "O tempo passou, e a guerra perdurou.\n\nE então, cansados, traumatizados e receosos, olhamos um para o outro.\n\nTalvez isso tivesse afastado outros casais, mas o laço da parceria ainda estava lá.\n\nEscondido. Enfraquecido.\n\nMas estava lá.",
+          "CONTINUAR ✦",
+          null,
+          "✦ Alguns laços sobrevivem justamente porque duas pessoas decidem reconstruí-los. ✦"
+        );
+
+        etapa = "carta8";
+
+        return;
+      }
+                if (etapa === "carta8") {
+
+        mostrar(
+          "Vocês se reergueram.",
+          "Mais fortes. Mais conscientes.",
+          "Nós nos reerguemos, cada um do seu jeito e no seu tempo.\n\nBuscamos nossas armaduras, agora mais marcadas pelo tempo e pela luta, mas também mais eficientes.\n\nNós estávamos mais fortes.\n\nSabíamos de coisas que jamais teríamos sabido antes e conhecíamos mais um ao outro.\n\nConhecíamos mais a nós mesmos.",
+          "CONTINUAR ✦",
+          null,
+          "✦ A guerra deixou marcas. Mas também ensinou vocês a lutar melhor. ✦"
+        );
+
+        etapa = "carta9";
+
+        return;
+      }
+                if (etapa === "carta9") {
+
+        mostrar(
+          "Mas ela sabe que a história ainda está sendo escrita.",
+          "Meu amor, as coisas não estão perfeitas.",
+          "E você sabe: eu penso demais.\n\nPorém, quando eu venho com dúvidas, você vem com paciência e reafirmações de segurança.\n\nQuando eu sinto que vou bambear, você me segura, pega a minha mão e me traz de volta.",
+          "CONTINUAR ✦",
+          null,
+          "✦ O amor não precisa ser perfeito para ser escolhido. ✦"
+        );
+
+        etapa = "carta10";
+
+        return;
+      }
+                if (etapa === "carta10") {
+
+        mostrar(
+          "E a gratidão dela não cabe em poucas palavras.",
+          "Sou grata por você.",
+          "Pela sua dedicação, pela sua melhora, pelo seu amadurecimento, pela sua empatia, pelo seu amor, pela sua paciência, pelo seu zelo, pelos seus presentes, pelo seu carinho, pelas suas palavras, pelas suas demonstrações de afeto, pelo seu cuidado comigo, pelo seu autocuidado, interno e externo, pelo seu romantismo...\n\nEnfim, eu poderia ficar escrevendo até amanhã.",
+          "CONTINUAR ✦",
+          null,
+          "✦ Há coisas que palavras jamais conseguem agradecer por completo. ✦"
+        );
+
+        etapa = "carta11";
+
+        return;
+      }
+                if (etapa === "carta11") {
+
+        mostrar(
+          "E, no fim de tudo...",
+          "Eu senti o laço antes mesmo de saber que ele existia.",
+          "Antes mesmo de saber o que ele significava.\n\nMas agora que sei e o reconheço, saiba que, mais do que tudo,\n\neu o aceito.\n\nEm resumo, amo você.",
+          "CONTINUAR ✦",
+          null,
+          "✦ O laço foi aceito. ✦"
+        );
+
+        etapa = "finalFoto";
+
+        return;
+      }
     });
 
 
