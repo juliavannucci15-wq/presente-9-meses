@@ -328,13 +328,13 @@
 if (etapa === "lacoParceria") {
 
   mostrar(
-    "A primeira prova começa agora.",
-    "O laço da parceria.",
-    "Existem dois momentos marcantes em que o destino parece ter escolhido aproximar vocês. Em qual deles ela sentiu o laço?",
-    "O ENCONTRO NO CENTRO CULTURAL ✦",
-    "A NOITE NO SKY BAR ✦",
-    "✦ Pense bem, parceiro dela. O Suriel não costuma repetir perguntas. ✦"
-  );
+  "A primeira prova começa agora.",
+  "O laço da parceria.",
+  "Houve um momento em que ela percebeu que havia algo diferente entre vocês. Em qual desses encontros ela sentiu o laço da parceria?",
+  "O ENCONTRO NO CENTRO CULTURAL ✦",
+  "A NOITE NO SKY BAR ✦",
+  "✦ Pense bem, parceiro dela. O Suriel não costuma repetir perguntas. ✦"
+);
 
   etapa = "provaCCBB";
 
@@ -363,67 +363,64 @@ if (etapa === "lacoParceria") {
 
       /* PRIMEIRO LAÇO */
 
-      if (etapa === "respostaCCBB") {
+      /* SEGUNDA PARTE — AS BATALHAS */
 
-        mostrar(
-          "O Suriel sorri de canto.",
-          "Você encontrou o primeiro laço.",
-          "Mas conhecer o coração dela não é suficiente. Um verdadeiro parceiro também precisa conhecer aquilo que só vocês dois entendem.",
-          "CONTINUAR ✦",
-          null,
-          "✦ Existe uma língua que pertence somente a vocês. ✦"
-        );
+if (etapa === "respostaCCBB") {
 
-        etapa = "laco";
+  mostrar(
+    "O Suriel o observa em silêncio.",
+    "Encontrar o laço foi apenas o começo.",
+    "Depois de se reconhecerem, vieram as diferenças. Dois mundos diferentes, dois jeitos diferentes de enxergar a vida. E, ainda assim, vocês continuaram escolhendo um ao outro.",
+    "CONTINUAR ✦",
+    null,
+    "✦ Algumas batalhas não são vencidas contra um inimigo, mas dentro de nós mesmos. ✦"
+  );
 
-        return;
-      }
+  etapa = "batalhas";
 
-
-      /* PROVA DA LÍNGUA */
-
-      if (etapa === "laco") {
-
-        mostrar(
-          "O Suriel sorri de canto.",
-          "A língua de vocês.",
-          "Diga-me, humano: qual é a língua que pertence somente a vocês dois?",
-          "LÍNGUA DO I ✦",
-          "LÍNGUA ANTIGA ✦",
-          "✦ Algumas línguas são aprendidas. Outras nascem entre duas pessoas. ✦"
-        );
-
-        etapa = "lingua";
-
-        return;
-      }
+  return;
+}
 
 
-      /* RESPOSTA CERTA: LÍNGUA DO I */
+/* PREPARAÇÃO PARA A SEGUNDA PROVA */
 
-      if (etapa === "lingua") {
+if (etapa === "batalhas") {
 
-        mostrar(
-          "Muito bem...",
-          "A língua do I.",
-          "Uma língua que aparentemente nenhum outro ser deste reino compreenderia. Exceto vocês dois.",
-          "CONTINUAR ✦",
-          null,
-          "✦ Algumas coisas existem apenas porque duas pessoas decidiram criá-las. ✦"
-        );
+  mostrar(
+    "O Suriel inclina a cabeça.",
+    "Vocês aprenderam um com o outro.",
+    "Mas me diga, humano. A maior batalha não foi a externa, foi? O que foi mais difícil para vocês?",
+    "APRENDER A IGNORAR A REJEIÇÃO E A INVEJA DOS OUTROS ✦",
+    "APRENDER A CONFIAR NA MUDANÇA E NA MELHORA UM DO OUTRO ✦",
+    "✦ Algumas respostas só podem ser encontradas por quem realmente viveu a história. ✦"
+  );
 
-        etapa = "depoisLingua";
+  etapa = "provaLicoes";
 
-        return;
-      }
+  return;
+}
+if (etapa === "provaLicoes") {
 
+  mostrar(
+    "O Suriel inclina a cabeça.",
+    "Não exatamente.",
+    "Houve coisas e pessoas de fora que interferiram no caminho de vocês. Mas essa não foi a maior batalha. A verdadeira mudança aconteceu quando cada um começou a olhar para si mesmo.",
+    "TENTAR NOVAMENTE ✦",
+    null,
+    "✦ O Suriel ainda espera a resposta certa. ✦"
+  );
+
+  etapa = "batalhas";
+
+  return;
+}
 
       /* PRÓXIMA ETAPA — VAMOS CONSTRUIR DEPOIS */
 
       if (etapa === "depoisLingua") {
 
         mostrar(
-          "O Suriel observa vocês em silêncio.",
+          "O Suriel o observa em silêncio.",
           "Ainda há mais.",
           "O laço continua levando você para dentro da história dela.",
           "CONTINUAR ✦",
@@ -502,7 +499,21 @@ if (etapa === "lacoParceria") {
 
         return;
       }
+if (etapa === "provaLicoes") {
 
+  mostrar(
+    "O Suriel sorri de canto.",
+    "Agora você entendeu.",
+    "Vocês não precisaram se tornar iguais. Precisaram aprender a confiar que ambos poderiam mudar, crescer e se tornar pessoas melhores. Por vocês mesmos e também um pelo outro.",
+    "CONTINUAR ✦",
+    null,
+    "✦ Algumas batalhas são vencidas quando se escolhe crescer, mesmo quando seria mais fácil permanecer como antes. ✦"
+  );
+
+  etapa = "depoisLicoes";
+
+  return;
+}
 
       /* RESPOSTA ERRADA DA LÍNGUA */
 
