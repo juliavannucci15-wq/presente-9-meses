@@ -282,11 +282,28 @@ sim.addEventListener("click", function() {
         "Foi no carro, após o CCBB, em que ela percebeu que havia algo diferente sobre você. Antes mesmo de te conhecer.";
 
       sim.textContent = "CONTINUAR ✦";
-      nao.style.display = "none";
+nao.style.display = "none";
 
-      document.querySelector(".tiny").textContent =
-        "✦ Não disse que não teria pegadinhas, humano...Talvez você seja mesmo o parceiro dela. ✦";
-    };
+document.querySelector(".tiny").textContent =
+  "✦ Não disse que não teria pegadinhas, humano... Talvez você seja mesmo o parceiro dela. ✦";
+
+
+sim.onclick = function() {
+
+  document.querySelector(".eyebrow").textContent =
+    "O Suriel sorri de canto.";
+
+  document.querySelector("h1").textContent =
+    "Você encontrou o primeiro laço.";
+
+  document.querySelector(".subtitle").textContent =
+    "Mas conhecer o coração dela não é suficiente. Um verdadeiro parceiro também precisa conhecer aquilo que só vocês dois entendem.";
+
+  sim.textContent = "CONTINUAR ✦";
+
+  document.querySelector(".tiny").textContent =
+    "✦ Existe uma língua que pertence somente a vocês. ✦";
+};
 
 
     nao.onclick = function() {
