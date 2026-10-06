@@ -229,28 +229,46 @@ color: rgba(222, 216, 239, 0.75);
 
   </div>
   <script>
-    const sim = document.querySelector(".buttons button:first-child");
-    const nao = document.querySelector(".buttons button:last-child");
+  const sim = document.querySelector(".buttons button:first-child");
+  const nao = document.querySelector(".buttons button:last-child");
 
-    sim.addEventListener("click", function() {
-      alert("Então você veio mesmo procurar respostas...");
+  sim.addEventListener("click", function() {
 
-      document.querySelector(".eyebrow").textContent =
-        "Vejo que não fugiu do seu destino.";
+    document.querySelector(".eyebrow").textContent =
+      "Vejo que não fugiu do seu destino.";
 
-      document.querySelector("h1").textContent =
-        "Muito bem, parceiro dela.";
+    document.querySelector("h1").textContent =
+      "Muito bem, parceiro dela.";
 
-      document.querySelector(".subtitle").textContent =
-        "Mas ainda precisará provar que é digno de abrir este presente.";
+    document.querySelector(".subtitle").textContent =
+      "Mas ainda precisará provar que é digno de abrir este presente.";
 
-      sim.textContent = "CONTINUAR ✦";
-      nao.style.display = "none";
-    });
+    sim.textContent = "CONTINUAR ✦";
+    nao.style.display = "none";
 
-    nao.addEventListener("click", function() {
-      alert("Tem certeza disso? O Suriel não costuma fazer a mesma pergunta duas vezes.");
-    });
-  </script>
+    document.querySelector(".tiny").textContent =
+      "✦ O Suriel observa em silêncio. ✦";
+  });
+
+
+  nao.addEventListener("click", function() {
+
+    document.querySelector(".eyebrow").textContent =
+      "O Suriel ergue uma sobrancelha.";
+
+    document.querySelector("h1").textContent =
+      "Tem certeza disso?";
+
+    document.querySelector(".subtitle").textContent =
+      "Você veio até aqui para descobrir o que ela preparou e agora pretende recuar?";
+
+    nao.textContent = "VOLTAR ✦";
+
+    sim.textContent = "EU SOU O PARCEIRO DELA";
+
+    document.querySelector(".tiny").textContent =
+      "✦ O destino não costuma aceitar um simples \"não\". ✦";
+  });
+</script>
 </body>
 </html>
