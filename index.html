@@ -221,8 +221,8 @@
       </p>
 
       <div class="buttons">
-        <button>SIM ✦</button>
-        <button>NÃO ✦</button>
+        <button id="sim">SIM ✦</button>
+        <button id="nao">NÃO ✦</button>
       </div>
 
       <div class="tiny">
@@ -233,160 +233,276 @@
 
   </div>
 
+
   <script>
-    const sim = document.querySelector(".buttons button:first-child");
-    const nao = document.querySelector(".buttons button:last-child");
+
+    const sim = document.getElementById("sim");
+    const nao = document.getElementById("nao");
+
+    const eyebrow = document.querySelector(".eyebrow");
+    const title = document.querySelector("h1");
+    const subtitle = document.querySelector(".subtitle");
+    const tiny = document.querySelector(".tiny");
 
 
-    /* PRIMEIRA TELA */
+    /*
+      ETAPAS DO PRESENTE
+
+      inicio
+      entrada
+      provaCCBB
+      respostaCCBB
+      laco
+      lingua
+    */
+
+    let etapa = "inicio";
+
+
+    function mostrar(texto, titulo, descricao, textoSim, textoNao, textoPequeno) {
+
+      eyebrow.textContent = texto;
+      title.textContent = titulo;
+      subtitle.textContent = descricao;
+
+      sim.textContent = textoSim;
+
+      if (textoNao === null) {
+        nao.style.display = "none";
+      } else {
+        nao.style.display = "inline-block";
+        nao.textContent = textoNao;
+      }
+
+      tiny.textContent = textoPequeno;
+    }
+
+
+    /* =========================
+       BOTÃO SIM
+       ========================= */
 
     sim.addEventListener("click", function() {
 
-      document.querySelector(".eyebrow").textContent =
-        "Vejo que não fugiu do seu destino.";
 
-      document.querySelector("h1").textContent =
-        "Muito bem, parceiro dela.";
+      /* TELA INICIAL */
 
-      document.querySelector(".subtitle").textContent =
-        "Mas ainda precisará provar que é digno de abrir este presente.";
+      if (etapa === "inicio") {
 
-      sim.textContent = "CONTINUAR ✦";
-      nao.style.display = "none";
+        mostrar(
+          "Vejo que não fugiu do seu destino.",
+          "Muito bem, parceiro dela.",
+          "Mas ainda precisará provar que é digno de abrir este presente.",
+          "CONTINUAR ✦",
+          null,
+          "✦ O Suriel observa em silêncio. ✦"
+        );
 
-      document.querySelector(".tiny").textContent =
-        "✦ O Suriel observa em silêncio. ✦";
+        etapa = "entrada";
+
+        return;
+      }
 
 
       /* ENTRADA DA PRIMEIRA PROVA */
 
-      sim.onclick = function() {
+      if (etapa === "entrada") {
 
-        document.querySelector(".eyebrow").textContent =
-          "Feche os olhos. Sinta seu coração batendo e procure nele o laço da parceria. Quando o encontrar, sinta ele.";
+        mostrar(
+          "Feche os olhos. Sinta seu coração batendo e procure nele o laço da parceria. Quando o encontrar, sinta ele.",
+          "A primeira prova começa agora. Leve o laço com você, humano. Se o tiver.",
+          "Existem dois momentos marcantes em que o destino parece ter escolhido aproximar vocês. Em qual deles ela sentiu o laço?",
+          "O ENCONTRO NO CENTRO CULTURAL ✦",
+          "A NOITE NO SKY BAR ✦",
+          "✦ Pense bem, parceiro dela. O Suriel não costuma repetir perguntas. ✦"
+        );
 
-        document.querySelector("h1").textContent =
-          "A primeira prova começa agora. Leve o laço com você, humano. Se o tiver.";
+        etapa = "provaCCBB";
 
-        document.querySelector(".subtitle").textContent =
-          "Existem dois momentos marcantes em que o destino parece ter escolhido aproximar vocês. Em qual deles ela sentiu o laço?";
-
-        sim.textContent = "O ENCONTRO NO CENTRO CULTURAL ✦";
-        nao.textContent = "A NOITE NO SKY BAR ✦";
-
-        nao.style.display = "inline-block";
-
-        document.querySelector(".tiny").textContent =
-          "✦ Pense bem, parceiro dela. O Suriel não costuma repetir perguntas. ✦";
+        return;
+      }
 
 
-        /* RESPOSTA CERTA — CCBB */
+      /* RESPOSTA CORRETA: CCBB */
 
-        sim.onclick = function() {
+      if (etapa === "provaCCBB") {
 
-          document.querySelector(".eyebrow").textContent =
-            "Interessante...";
+        mostrar(
+          "Interessante...",
+          "Você se lembra.",
+          "Foi no carro, depois do CCBB, que ela percebeu que havia algo diferente entre vocês. Antes de vocês se sentirem um casal.",
+          "CONTINUAR ✦",
+          null,
+          "✦ Não disse que não teria pegadinhas, humano... Talvez você seja mesmo o parceiro dela. ✦"
+        );
 
-          document.querySelector("h1").textContent =
-            "Você se lembra.";
+        etapa = "respostaCCBB";
 
-          document.querySelector(".subtitle").textContent =
-            "Foi no carro, depois do CCBB, que ela percebeu que havia algo diferente entre vocês. Antes de vocês se sentirem um casal.";
-
-          sim.textContent = "CONTINUAR ✦";
-          nao.style.display = "none";
-
-          document.querySelector(".tiny").textContent =
-            "✦ Não disse que não teria pegadinhas, humano... Talvez você seja mesmo o parceiro dela. ✦";
-
-
-          /* ENTRADA DA SEGUNDA PROVA */
-
-          sim.onclick = function() {
-
-            document.querySelector(".eyebrow").textContent =
-              "O Suriel sorri de canto.";
-
-            document.querySelector("h1").textContent =
-              "Você encontrou o primeiro laço.";
-
-            document.querySelector(".subtitle").textContent =
-              "Mas conhecer o coração dela não é suficiente. Um verdadeiro parceiro também precisa conhecer aquilo que só vocês dois entendem.";
-
-            sim.textContent = "CONTINUAR ✦";
-
-            document.querySelector(".tiny").textContent =
-              "✦ Existe uma língua que pertence somente a vocês. ✦";
+        return;
+      }
 
 
-            /* LÍNGUA DO I */
+      /* PRIMEIRO LAÇO */
 
-            sim.onclick = function() {
+      if (etapa === "respostaCCBB") {
 
-              document.querySelector(".eyebrow").textContent =
-                "O Suriel sorri de canto.";
+        mostrar(
+          "O Suriel sorri de canto.",
+          "Você encontrou o primeiro laço.",
+          "Mas conhecer o coração dela não é suficiente. Um verdadeiro parceiro também precisa conhecer aquilo que só vocês dois entendem.",
+          "CONTINUAR ✦",
+          null,
+          "✦ Existe uma língua que pertence somente a vocês. ✦"
+        );
 
-              document.querySelector("h1").textContent =
-                "A língua de vocês.";
+        etapa = "laco";
 
-              document.querySelector(".subtitle").textContent =
-                "Diga-me, humano: qual é a língua que pertence somente a vocês dois?";
-
-              sim.textContent = "LÍNGUA DO I ✦";
-              nao.textContent = "LÍNGUA ANTIGA ✦";
-
-              nao.style.display = "inline-block";
-
-              document.querySelector(".tiny").textContent =
-                "✦ Algumas línguas são aprendidas. Outras nascem entre duas pessoas. ✦";
-            };
-          };
-        };
+        return;
+      }
 
 
-        /* RESPOSTA ERRADA — SKY BAR */
+      /* PROVA DA LÍNGUA */
 
-        nao.onclick = function() {
+      if (etapa === "laco") {
 
-          document.querySelector(".eyebrow").textContent =
-            "O Suriel inclina a cabeça.";
+        mostrar(
+          "O Suriel sorri de canto.",
+          "A língua de vocês.",
+          "Diga-me, humano: qual é a língua que pertence somente a vocês dois?",
+          "LÍNGUA DO I ✦",
+          "LÍNGUA ANTIGA ✦",
+          "✦ Algumas línguas são aprendidas. Outras nascem entre duas pessoas. ✦"
+        );
 
-          document.querySelector("h1").textContent =
-            "Não exatamente.";
+        etapa = "lingua";
 
-          document.querySelector(".subtitle").textContent =
-            "A noite no Sky Bar foi o momento em que vocês se sentiram como um casal. Mas não foi quando ela sentiu o laço da parceria.";
+        return;
+      }
 
-          nao.textContent = "TENTAR NOVAMENTE ✦";
-          sim.textContent = "O ENCONTRO NO CCBB ✦";
 
-          document.querySelector(".tiny").textContent =
-            "✦ Algumas histórias, humano... começam antes de percebermos que começaram. ✦";
-        };
-      };
+      /* RESPOSTA CERTA: LÍNGUA DO I */
+
+      if (etapa === "lingua") {
+
+        mostrar(
+          "Muito bem...",
+          "A língua do I.",
+          "Uma língua que aparentemente nenhum outro ser deste reino compreenderia. Exceto vocês dois.",
+          "CONTINUAR ✦",
+          null,
+          "✦ Algumas coisas existem apenas porque duas pessoas decidiram criá-las. ✦"
+        );
+
+        etapa = "depoisLingua";
+
+        return;
+      }
+
+
+      /* PRÓXIMA ETAPA — VAMOS CONSTRUIR DEPOIS */
+
+      if (etapa === "depoisLingua") {
+
+        mostrar(
+          "O Suriel observa vocês em silêncio.",
+          "Ainda há mais.",
+          "O laço continua levando você para dentro da história dela.",
+          "CONTINUAR ✦",
+          null,
+          "✦ A noite ainda guarda segredos. ✦"
+        );
+
+        return;
+      }
+
     });
 
 
-    /* BOTÃO NÃO DA PRIMEIRA TELA */
+    /* =========================
+       BOTÃO NÃO
+       ========================= */
 
     nao.addEventListener("click", function() {
 
-      document.querySelector(".eyebrow").textContent =
-        "O Suriel ergue uma sobrancelha.";
 
-      document.querySelector("h1").textContent =
-        "Tem certeza disso?";
+      /* NÃO NA TELA INICIAL */
 
-      document.querySelector(".subtitle").textContent =
-        "Você veio até aqui para descobrir o que ela preparou e agora pretende recuar?";
+      if (etapa === "inicio") {
 
-      nao.textContent = "VOLTAR ✦";
+        mostrar(
+          "O Suriel ergue uma sobrancelha.",
+          "Tem certeza disso?",
+          "Você veio até aqui para descobrir o que ela preparou e agora pretende recuar?",
+          "EU SOU O PARCEIRO DELA",
+          "VOLTAR ✦",
+          "✦ O destino não costuma aceitar um simples \"não\". ✦"
+        );
 
-      sim.textContent = "EU SOU O PARCEIRO DELA";
+        etapa = "inicioNao";
 
-      document.querySelector(".tiny").textContent =
-        "✦ O destino não costuma aceitar um simples \"não\". ✦";
+        return;
+      }
+
+
+      /* VOLTAR PARA O SIM */
+
+      if (etapa === "inicioNao") {
+
+        mostrar(
+          "O Suriel ergue uma sobrancelha.",
+          "Muito bem.",
+          "Parece que finalmente decidiu enfrentar o seu destino.",
+          "EU SOU O PARCEIRO DELA",
+          "VOLTAR ✦",
+          "✦ Agora escolha com sabedoria, humano. ✦"
+        );
+
+        etapa = "inicioNao2";
+
+        return;
+      }
+
+
+      /* SE CLICAR NO SKY BAR */
+
+      if (etapa === "provaCCBB") {
+
+        mostrar(
+          "O Suriel inclina a cabeça.",
+          "Não exatamente.",
+          "A noite no Sky Bar foi o momento em que vocês se sentiram como um casal. Mas não foi quando ela sentiu o laço da parceria.",
+          "O ENCONTRO NO CCBB ✦",
+          "TENTAR NOVAMENTE ✦",
+          "✦ Algumas histórias, humano... começam antes de percebermos que começaram. ✦"
+        );
+
+        /*
+          Continuamos na mesma etapa.
+          Assim, o botão CCBB continua sendo a resposta correta.
+        */
+
+        return;
+      }
+
+
+      /* RESPOSTA ERRADA DA LÍNGUA */
+
+      if (etapa === "lingua") {
+
+        mostrar(
+          "O Suriel ergue uma sobrancelha.",
+          "Língua antiga?",
+          "Não, humano. Estou falando de algo que nasceu entre vocês dois. Algo que nenhum livro antigo poderia ensinar.",
+          "LÍNGUA DO I ✦",
+          "LÍNGUA ANTIGA ✦",
+          "✦ Algumas respostas pertencem aos livros. Essa pertence a vocês. ✦"
+        );
+
+        return;
+      }
+
     });
+
   </script>
 
 </body>
