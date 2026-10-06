@@ -14,8 +14,9 @@
     }
 
     body {
-      min-height: 100vh;
-      overflow: hidden;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  overflow-y: auto;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -64,7 +65,7 @@
 
     /* CONTEÚDO */
 
-   .content {
+ .content {
   position: relative;
   z-index: 2;
 
@@ -73,9 +74,7 @@
 
   text-align: center;
 
-  max-height: 100vh;
-  overflow-y: auto;
-  padding: 20px 0;
+  padding: 20px 0 40px;
 }
     
 
@@ -510,6 +509,21 @@ if (etapa === "depoisLicoes") {
 
         return;
       }
+      if (etapa === "provaMusica") {
+
+  mostrar(
+    "O Suriel inclina a cabeça.",
+    "Não exatamente.",
+    "A música ficou marcada por outro momento. Um momento em que vocês riam um do outro e de tudo ao redor, como se o resto do mundo tivesse desaparecido.",
+    "TENTAR NOVAMENTE ✦",
+    null,
+    "✦ Algumas lembranças só fazem sentido quando nos lembramos de como nos sentimos. ✦"
+  );
+
+  etapa = "memoriaMusica";
+
+  return;
+}
             if (etapa === "depoisMusica") {
 
         mostrar(
@@ -579,22 +593,19 @@ if (etapa === "depoisLicoes") {
 
       if (etapa === "provaCCBB") {
 
-        mostrar(
-          "O Suriel inclina a cabeça.",
-          "Não exatamente.",
-          "A noite no Sky Bar foi o momento em que vocês se sentiram como um casal. Mas não foi quando ela sentiu o laço da parceria.",
-          "O ENCONTRO NO CCBB ✦",
-          "TENTAR NOVAMENTE ✦",
-          "✦ Algumas histórias, humano... começam antes de percebermos que começaram. ✦"
-        );
+  mostrar(
+    "O Suriel inclina a cabeça.",
+    "Não exatamente.",
+    "A noite no Sky Bar foi o momento em que vocês se sentiram como um casal. Mas não foi quando ela sentiu o laço da parceria.",
+    "TENTAR NOVAMENTE ✦",
+    null,
+    "✦ Algumas histórias, humano... começam antes de percebermos que começaram. ✦"
+  );
 
-        /*
-          Continuamos na mesma etapa.
-          Assim, o botão CCBB continua sendo a resposta correta.
-        */
+  etapa = "lacoParceria";
 
-        return;
-      }
+  return;
+}
 if (etapa === "provaLicoes") {
 
   mostrar(
