@@ -194,7 +194,18 @@
       box-shadow:
         0 0 25px rgba(157, 135, 226, 0.25);
     }
-
+    .foto-final {
+      display: block;
+      width: min(82vw, 360px);
+      max-height: 55vh;
+      object-fit: contain;
+      margin: 28px auto 10px;
+      border-radius: 18px;
+      border: 1px solid rgba(201, 188, 255, 0.55);
+      box-shadow:
+        0 0 18px rgba(160, 140, 255, 0.25),
+        0 0 45px rgba(120, 100, 220, 0.15);
+    }
     .tiny {
       margin-top: 28px;
 
@@ -741,10 +752,37 @@ if (etapa === "depoisLicoes") {
           "✦ O laço foi aceito. ✦"
         );
 
-        etapa = "finalFoto";
+                etapa = "finalFoto";
 
         return;
       }
+
+      if (etapa === "finalFoto") {
+
+        mostrar(
+          "O Suriel sorri uma última vez.",
+          "Feliz nove meses, meu amor.",
+          "Enfim, mais um número múltiplo de três. 💜",
+          null,
+          null,
+          "✦ O laço foi reconhecido. ✦"
+        );
+
+        sim.style.display = "none";
+        nao.style.display = "none";
+
+        const foto = document.createElement("img");
+        foto.src = "WhatsApp Image 2026-10-06 at 8.51.33 PM.jpeg";
+        foto.alt = "Uma lembrança de vocês dois";
+        foto.className = "foto-final";
+
+        document.querySelector(".content").appendChild(foto);
+
+        etapa = "fim";
+
+        return;
+      }
+
     });
 
 
