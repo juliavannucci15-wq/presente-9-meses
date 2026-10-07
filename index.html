@@ -550,7 +550,7 @@ if (etapa === "depoisLicoes") {
 
         return;
       }
-        if (etapa === "proximaParte2") {
+              if (etapa === "proximaParte2") {
 
         mostrar(
           "O Suriel finalmente deixa escapar um pequeno sorriso.",
@@ -561,7 +561,12 @@ if (etapa === "depoisLicoes") {
           "✦ Algumas respostas não precisam ser encontradas. Apenas reconhecidas. ✦"
         );
 
-         if (etapa === "reflexaoFinal") {
+        etapa = "reflexaoFinal";
+
+        return;
+      }
+
+      if (etapa === "reflexaoFinal") {
 
         mostrar(
           "O Suriel observa vocês por um último instante.",
@@ -576,6 +581,8 @@ if (etapa === "depoisLicoes") {
 
         return;
       }
+
+      
       if (etapa === "despedidaSuriel") {
 
         mostrar(
