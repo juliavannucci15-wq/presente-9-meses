@@ -201,7 +201,7 @@
       object-fit: contain;
       margin: 28px auto 10px;
       border-radius: 18px;
-      border: 1px solid rgba(201, 188, 255, 0.55);
+      border: none;
       box-shadow:
         0 0 18px rgba(160, 140, 255, 0.25),
         0 0 45px rgba(120, 100, 220, 0.15);
@@ -765,30 +765,42 @@ if (etapa === "depoisLicoes") {
       }
 
       if (etapa === "finalFoto") {
+  mostrar(
+    "O Suriel sorri uma última vez.",
+    "Minhas respostas lhe foram úteis, parceiro dela?",
+    "Encontrou o que buscava?\n\nAgora é com vocês.",
+    "CONTINUAR ✦",
+    null,
+    "✦ O resto dessa história não pertence mais ao Suriel. ✦"
+  );
+          etapa = "mensagemFinal";
+  return;
+}
 
-        mostrar(
-          "O Suriel sorri uma última vez.",
-          "Feliz nove meses, meu amor.",
-          "Enfim, mais um número múltiplo de três. 💜",
-          null,
-          null,
-          "✦ O laço foi reconhecido. ✦"
-        );
+if (etapa === "mensagemFinal") {
+  mostrar(
+    "Agora, apenas vocês dois.",
+    "Feliz nove meses, meu amor.",
+    "Enfim, mais um número múltiplo de três. 💜",
+    null,
+    null,
+    "✦ O laço foi reconhecido. ✦"
+  );
 
-        sim.style.display = "none";
-        nao.style.display = "none";
+  sim.style.display = "none";
+  nao.style.display = "none";
 
-        const foto = document.createElement("img");
-        foto.src = "WhatsApp Image 2026-10-06 at 8.51.33 PM.jpeg";
-        foto.alt = "Uma lembrança de vocês dois";
-        foto.className = "foto-final";
+  const foto = document.createElement("img");
+  foto.src = "WhatsApp Image 2026-10-06 at 8.51.33 PM.jpeg";
+  foto.alt = "Uma lembrança de vocês dois";
+  foto.className = "foto-final";
 
-        document.querySelector(".content").appendChild(foto);
+  document.querySelector(".content").appendChild(foto);
 
-        etapa = "fim";
+  etapa = "fim";
+  return;
+}
 
-        return;
-      }
 
     });
 
