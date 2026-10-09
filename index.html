@@ -777,14 +777,29 @@ if (etapa === "depoisLicoes") {
   return;
 }
 
+
 if (etapa === "mensagemFinal") {
   mostrar(
     "Agora, apenas vocês dois.",
     "Feliz nove meses, meu amor.",
-    "Enfim, mais um número múltiplo de três. 💜",
+    "Enfim, mais um número múltiplo de três para a sua lista. 💜",
+    "CONTINUAR ✦",
+    null,
+    "✦ Algumas histórias merecem uma última página. ✦"
+  );
+
+  etapa = "fotoFinal";
+  return;
+}
+
+if (etapa === "fotoFinal") {
+  mostrar(
+    "",
+    "",
+    "",
     null,
     null,
-    "✦ O laço foi reconhecido. ✦"
+    "✦ O laço foi aceito. ✦"
   );
 
   sim.style.display = "none";
@@ -795,7 +810,10 @@ if (etapa === "mensagemFinal") {
   foto.alt = "Uma lembrança de vocês dois";
   foto.className = "foto-final";
 
-  document.querySelector(".content").appendChild(foto);
+    document.querySelector(".content").appendChild(foto);
+  const tiny = document.querySelector(".tiny");
+  tiny.style.display = "block";
+  foto.insertAdjacentElement("afterend", tiny);
 
   etapa = "fim";
   return;
